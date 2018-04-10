@@ -7,7 +7,6 @@ Depends:
 	car,
 	randomForest,
 	pROC,
-	rms,
 	Hmisc
 License: What license is it under?
 Encoding: UTF-8
