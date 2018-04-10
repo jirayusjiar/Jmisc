@@ -27,7 +27,7 @@ get.model.interpretation <- function(model, normalized = F) {
                 type = 2,
                 test.statistic = 'Wald',
                 singular.ok = T
-            )[-1, 2]
+            )[, 2]
         names(anova2.wald) <- indep
         anova2.wald[is.na(anova2.wald)] <- 0
 
@@ -87,6 +87,16 @@ get.model.interpretation <- function(model, normalized = F) {
             )[, 1]))
         perm.scaled[is.na(perm.scaled)] <- 0
 
+
+        # Normalize
+        if (normalized) {
+            gini <-
+                gini / sum(gini) * 100
+            perm.raw <-
+                perm.raw / sum(perm.raw) * 100
+            perm.scaled <-
+                perm.scaled / sum(perm.scaled) * 100
+        }
         return(
             list(
                 Gini = gini,
