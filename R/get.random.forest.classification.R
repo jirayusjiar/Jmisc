@@ -11,20 +11,26 @@
 #' @keywords RF
 #' @export
 get.random.forest.classification <-
-    function(dataset,
-             indep,
-             dep,
-             training.index,
-             ntree = 100) {
+    function (dataset,
+              indep,
+              dep,
+              training.index,
+              ntree = 100) {
+        outcome <- NULL
+        if (!is.factor(dataset[, dep])) {
+            outcome <- factor(dataset[, dep])
+        } else {
+            outcome <- dataset[, dep]
+        }
 
-        outcome <- ifelse(is.factor(dataset[, dep]), dataset[, dep], factor(dataset[, dep]))
+        outcome <- outcome[training.index]
         rf.model <- randomForest(
-            x = dataset[training.index, indep, drop = FALSE],
+            x = dataset[training.index, indep,
+                        drop = FALSE],
             y = outcome,
             ntree = ntree,
             importance = T,
             keep.forest = T
         )
-
         return(rf.model)
     }
