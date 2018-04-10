@@ -1,2 +1,10 @@
-# Jmisc
-Jirayus Miscellaneous. Contains many functions which have been developed along my HDR student journey.
+# Jmisc [![Build Status](https://travis-ci.org/jirayusjiar/Jmisc.svg?branch=master)](https://travis-ci.org/jirayusjiar/Jmisc)
+
+Jirayus Miscellaneous. An R package which contains many functions developed to make my HDR life simple.
+
+
+### Install
+with the `devtools ` R package:
+```r
+devtools::install_github('jirayusjiar/Jmisc')
+```
