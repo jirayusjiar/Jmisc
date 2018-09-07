@@ -7,7 +7,10 @@ Depends:
 	car,
 	randomForest,
 	pROC,
-	Hmisc
+	Hmisc,
+	effsize,
+	ggplot2,
+	rms
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
