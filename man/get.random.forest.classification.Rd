@@ -4,8 +4,13 @@
 \alias{get.random.forest.classification}
 \title{Get Random Forest model function (Classification)}
 \usage{
-get.random.forest.classification(dataset, indep, dep, training.index,
-  ntree = 100)
+get.random.forest.classification(
+  dataset,
+  indep,
+  dep,
+  training.index,
+  ntree = 100
+)
 }
 \arguments{
 \item{dataset}{a data frame for data}
